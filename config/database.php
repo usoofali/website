@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
-$db_name = 'school_db';
-$username = 'root';
+$db_name = 'u832245696_cms';
+$username = 'u832245696_cms';
 $password = '@Gusau00'; // Updated for local environment
 
 try {

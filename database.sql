@@ -1,6 +1,6 @@
 -- Create database and switch to it
-CREATE DATABASE IF NOT EXISTS school_db;
-USE school_db;
+CREATE DATABASE IF NOT EXISTS u832245696_cms;
+USE u832245696_cms;
 
 -- 1. institution
 CREATE TABLE IF NOT EXISTS institution (
