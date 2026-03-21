@@ -25,7 +25,7 @@ $eventsList = $eventsStmt->fetchAll();
         <p class="lead mb-5 text-secondary fs-4"><?= htmlspecialchars($institution['motto'] ?? 'Empowering the Future') ?></p>
         <div class="d-flex justify-content-center gap-3">
             <a href="<?= $base_dir ?>pages/about.php" class="btn btn-glass btn-lg">Discover More</a>
-            <a href="<?= $base_dir ?>pages/admissions.php" class="btn btn-primary-custom btn-lg">Apply Now</a>
+            <a href="https://portal.cshtgusau.com/apply" class="btn btn-primary-custom btn-lg">Apply Now</a>
         </div>
     </div>
 </section>

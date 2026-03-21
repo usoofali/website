@@ -42,7 +42,7 @@ $programs = $stmt->fetchAll();
                             </div>
                         </div>
                         <div class="card-footer bg-transparent border-0 p-4 text-end">
-                            <a href="<?= $base_dir ?>pages/admissions.php" class="btn btn-primary-custom">Apply for this Program</a>
+                            <a href="https://portal.cshtgusau.com/apply" class="btn btn-primary-custom">Apply for this Program</a>
                         </div>
                     </div>
                 </div>

@@ -27,7 +27,7 @@
                 <ul class="list-unstyled text-white-50">
                     <li class="mb-2"><a href="<?= $base_dir ?>pages/about.php">About Us</a></li>
                     <li class="mb-2"><a href="<?= $base_dir ?>pages/programs.php">Programs</a></li>
-                    <li class="mb-2"><a href="<?= $base_dir ?>pages/admissions.php">Admissions</a></li>
+                    <li class="mb-2"><a href="https://portal.cshtgusau.com/apply">Admissions</a></li>
                     <li class="mb-2"><a href="<?= $base_dir ?>pages/downloads.php">Downloads</a></li>
                 </ul>
             </div>
