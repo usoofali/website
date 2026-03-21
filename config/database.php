@@ -15,6 +15,7 @@ try {
 } catch (PDOException $e) {
     // In production, log this instead of showing.
     error_log("Connection failed: " . $e->getMessage());
+    print_r($e->getMessage());
     die("Database connection failed. Please contact administrator.");
 }
 ?>
