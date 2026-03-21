@@ -30,26 +30,28 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                     <ul class="dropdown-menu glass-panel border-0">
                         <li><a class="dropdown-item" href="<?= $base_dir ?>pages/programs.php">Programs</a></li>
                         <li><a class="dropdown-item" href="<?= $base_dir ?>pages/departments.php">Departments</a></li>
+                        <li><a class="dropdown-item" href="<?= $base_dir ?>pages/staff.php">Staff</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle <?= in_array($currentPage, ['news.php', 'events.php', 'gallery.php', 'downloads.php']) ? 'active' : '' ?>" href="#" role="button" data-bs-toggle="dropdown">
+                        Other
+                    </a>
+                    <ul class="dropdown-menu glass-panel border-0">
+                        <li><a class="dropdown-item" href="<?= $base_dir ?>pages/news.php">News</a></li>
+                        <li><a class="dropdown-item" href="<?= $base_dir ?>pages/events.php">Events</a></li>
+                        <li><a class="dropdown-item" href="<?= $base_dir ?>pages/gallery.php">Gallery</a></li>
+                        <li><a class="dropdown-item" href="<?= $base_dir ?>pages/downloads.php">Downloads</a></li>
+                        <li><a class="dropdown-item" href="<?= $base_dir ?>pages/contact.php">Contact</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $currentPage == 'staff.php' ? 'active' : '' ?>" href="<?= $base_dir ?>pages/staff.php">Staff</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?= $currentPage == 'news.php' ? 'active' : '' ?>" href="<?= $base_dir ?>pages/news.php">News</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?= $currentPage == 'events.php' ? 'active' : '' ?>" href="<?= $base_dir ?>pages/events.php">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?= $currentPage == 'gallery.php' ? 'active' : '' ?>" href="<?= $base_dir ?>pages/gallery.php">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?= $currentPage == 'contact.php' ? 'active' : '' ?>" href="<?= $base_dir ?>pages/contact.php">Contact</a>
+                    <a class="nav-link"  href="https://portal.cshtgusau.com/login">Portal</a>
                 </li>
             </ul>
             <div class="ms-lg-3 mt-3 mt-lg-0">
-                <a href="<?= $base_dir ?>pages/admissions.php" class="btn btn-primary-custom w-100">Apply Now</a>
+                <a href="https://portal.cshtgusau.com/apply" class="btn btn-primary-custom w-100">Apply Now</a>
             </div>
         </div>
     </div>
