@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
-$db_name = 'u832245696_cms';
-$username = 'u832245696_cms';
+$db_name = 'school_db';
+$username = 'root';
 $password = '@Gusau00'; // Updated for local environment
 
 try {
@@ -15,7 +15,6 @@ try {
 } catch (PDOException $e) {
     // In production, log this instead of showing.
     error_log("Connection failed: " . $e->getMessage());
-    print_r($e->getMessage());
-    // die("Database connection failed. Please contact administrator.");
+    die("Database connection failed. Please contact administrator.");
 }
 ?>

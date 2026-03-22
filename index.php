@@ -14,6 +14,19 @@ $newsList = $newsStmt->fetchAll();
 // Fetch events
 $eventsStmt = $pdo->query("SELECT * FROM events WHERE event_date >= NOW() ORDER BY event_date ASC LIMIT 3");
 $eventsList = $eventsStmt->fetchAll();
+
+// Fetch slides for carousel
+$slidesDir = __DIR__ . '/assets/images/slides/';
+$slides = [];
+if (is_dir($slidesDir)) {
+    $files = scandir($slidesDir);
+    foreach ($files as $file) {
+        $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+        if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
+            $slides[] = 'assets/images/slides/' . $file;
+        }
+    }
+}
 ?>
 
 <!-- Hero Section -->
@@ -35,7 +48,33 @@ $eventsList = $eventsStmt->fetchAll();
     <div class="container glass-panel p-md-5 p-4 my-md-5 my-4">
         <div class="row align-items-center">
             <div class="col-md-6 mb-4 mb-md-0">
-                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800" alt="Campus View" class="img-fluid rounded-4 shadow" style="object-fit:cover; height:400px; width:100%;">
+                <?php if (!empty($slides)): ?>
+                    <div id="schoolCarousel" class="carousel slide carousel-fade shadow rounded-4 overflow-hidden" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <?php foreach ($slides as $index => $slide): ?>
+                                <button type="button" data-bs-target="#schoolCarousel" data-bs-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>" aria-current="<?= $index === 0 ? 'true' : 'false' ?>" aria-label="Slide <?= $index + 1 ?>"></button>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="carousel-inner">
+                            <?php foreach ($slides as $index => $slide): ?>
+                                <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>" data-bs-interval="5000">
+                                    <img src="<?= $base_dir . $slide ?>" class="d-block w-100" alt="School Slide <?= $index + 1 ?>" style="object-fit:cover; height:400px;">
+                                    
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#schoolCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#schoolCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                <?php else: ?>
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800" alt="Campus View" class="img-fluid rounded-4 shadow" style="object-fit:cover; height:400px; width:100%;">
+                <?php endif; ?>
             </div>
             <div class="col-md-6 px-lg-5">
                 <h2 class="mb-4 gradient-text">About Our Institution</h2>
