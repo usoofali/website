@@ -72,6 +72,11 @@ $msg_count = $pdo->query("SELECT COUNT(*) FROM contact_messages")->fetchColumn()
                 </a>
             </li>
             <li>
+                <a href="provost.php" class="nav-link text-white <?= $current_page == 'provost.php' ? 'active' : '' ?>">
+                    <i class="bi bi-person-badge me-2"></i> Provost's Page
+                </a>
+            </li>
+            <li>
                 <a href="news.php" class="nav-link text-white <?= $current_page == 'news.php' ? 'active' : '' ?>">
                     <i class="bi bi-newspaper me-2"></i> News
                 </a>

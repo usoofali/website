@@ -23,6 +23,9 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                 <li class="nav-item">
                     <a class="nav-link <?= $currentPage == 'about.php' ? 'active' : '' ?>" href="<?= $base_dir ?>pages/about.php">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link <?= $currentPage == 'provost.php' ? 'active' : '' ?>" href="<?= $base_dir ?>pages/provost.php">Provost</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle <?= in_array($currentPage, ['programs.php', 'departments.php']) ? 'active' : '' ?>" href="#" role="button" data-bs-toggle="dropdown">
                         Academics
@@ -50,9 +53,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                     <a class="nav-link"  href="https://portal.cshtgusau.com/login">Portal</a>
                 </li>
             </ul>
-            <div class="ms-lg-3 mt-3 mt-lg-0">
-                <a href="https://portal.cshtgusau.com/apply" class="btn btn-primary-custom w-100">Apply Now</a>
-            </div>
         </div>
     </div>
 </nav>

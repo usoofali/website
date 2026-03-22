@@ -1,0 +1,14 @@
+# Secrets – never commit these
+.env
+
+# Composer / NPM
+vendor/
+node_modules/
+
+# Uploads
+assets/uploads/
+
+# OS / IDE
+.DS_Store
+.idea/
+*.swp
