@@ -43,4 +43,7 @@ $theme = [
 
     // Slides folder — relative to project root, e.g. assets/images/slides
     'slides_dir'   => _safe_path(env('THEME_SLIDES_DIR', 'assets/images/slides')),
+
+    // Student portal URL — used for Apply Now / Portal links across the site
+    'portal_url'   => filter_var(env('PORTAL_URL', '#'), FILTER_SANITIZE_URL),
 ];

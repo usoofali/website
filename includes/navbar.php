@@ -50,7 +50,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="https://portal.cshtgusau.com/login">Portal</a>
+                    <a class="nav-link"  href="<?= htmlspecialchars($theme['portal_url']) ?>/login">Portal</a>
                 </li>
             </ul>
         </div>
