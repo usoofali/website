@@ -1,5 +1,7 @@
 # Secrets – never commit these
 .env
+.env.envB
+.env.*local
 
 # Composer / NPM
 vendor/

@@ -15,15 +15,16 @@ $newsList = $newsStmt->fetchAll();
 $eventsStmt = $pdo->query("SELECT * FROM events WHERE event_date >= NOW() ORDER BY event_date ASC LIMIT 3");
 $eventsList = $eventsStmt->fetchAll();
 
-// Fetch slides for carousel
-$slidesDir = __DIR__ . '/assets/images/slides/';
+// Fetch slides for carousel — folder is configured via THEME_SLIDES_DIR in .env
+$slidesDirRel = rtrim($theme['slides_dir'], '/');          // e.g. assets/images/slides
+$slidesDirAbs = __DIR__ . '/' . $slidesDirRel . '/';      // absolute path for scandir
 $slides = [];
-if (is_dir($slidesDir)) {
-    $files = scandir($slidesDir);
+if (is_dir($slidesDirAbs)) {
+    $files = scandir($slidesDirAbs);
     foreach ($files as $file) {
         $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
         if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
-            $slides[] = 'assets/images/slides/' . $file;
+            $slides[] = $slidesDirRel . '/' . $file;      // relative web path for <img src>
         }
     }
 }
